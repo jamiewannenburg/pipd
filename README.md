@@ -16,11 +16,13 @@ Here are the parts I used:
 - [4 knob rotary](https://www.adafruit.com/product/5752) it's i2c (so no extra GPIO is used up) and it has buttons and RGB LEDs.
 - 128x64 SSD1306 monochrome OLED. These are surplus from really old phones, easy to find, and are pretty crisp & bright. Some have split colors where the top 16 pixels are yellow, and the bottom are blue. It's still 1 color, but looks like 2. I ended up using plain black/white
 - Since I tie up the USB-data port on pizero with gadget-mode, USB audio is not an option. I used [this](https://www.amazon.com/RASPIAUDIO-Audio-Sound-Ultra-Raspberry/dp/B09JK728MB) for better sound, but you can also use something really nice like [pisound](https://blokas.io/pisound/)
+- [MCP4725 DAC](https://www.adafruit.com/product/935) - A 12-bit I2C DAC that can be used for analog output. Supports multiple units on the same I2C bus through A0 pin configuration.
 
 I hooked it up like this:
 
 - Connect rotary-encoders board to "expansion port" (i2c) of sound-board, using a Qwiik connector.
 - Run another Qwiik connector to the OLED from rotary-board.
+- Connect the MCP4725 DAC to the I2C bus. You can connect multiple DACs by setting their A0 pins differently (one to GND, one to VCC).
 
 In [another synth](https://github.com/konsumer/bellasynth) I used:
 

@@ -1,0 +1,16 @@
+#N canvas 0 0 450 300 10;
+#X obj 50 50 pi2c_dac;
+#X obj 50 100 float 0;
+#X obj 50 150 bang;
+#X obj 50 200 float;
+#X obj 50 250 float 0;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 4 0 0 0;
+#X text 50 30 pi2c_dac - MCP4725 I2C DAC;
+#X text 50 80 Input: float (0-1) to set DAC value;
+#X text 50 130 Bang to read current DAC value;
+#X text 50 180 Output: current DAC value (0-4095);
+#X text 50 220 Constructor argument: float (0 or 1) for A0 pin state;
+#X text 50 280 The MCP4725 is a 12-bit DAC with I2C interface. A0 pin state determines I2C address: 0=0x62, 1=0x63.; 
