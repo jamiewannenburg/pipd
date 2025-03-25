@@ -9,3 +9,4 @@ drivers/test_oled
 *.o
 *.pd_linux
 ._*
+pipd.code-workspace

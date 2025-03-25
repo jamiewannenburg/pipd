@@ -8,7 +8,7 @@
 #define DAC_WRITE 0x40
 
 int dac_init(int a0_state) {
-    int fd = i2c_open();
+    int fd = i2c_open(1);  // Use I2C-1
     if (fd < 0) {
         fprintf(stderr, "Failed to open I2C device\n");
         return -1;

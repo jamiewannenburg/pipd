@@ -55,13 +55,14 @@ bool i2c_get_register_val(int fd, int reg, void* out_pntr, uint8_t len) {
 
 // Set a value, by register (max length 32 bytes)
 bool i2c_set_register_val(int fd, int reg, void* in_ptr, uint8_t len) {
-  uint8_t msg[len + 1];
-  msg[0] = reg;
-  memcpy(msg + 1, in_ptr, len);
+    uint8_t msg[len + 1];
+    msg[0] = reg;
+    memcpy(msg + 1, in_ptr, len);
 
-  if (i2c_write(fd, msg, len + 1) != (len + 1)) {
-    return false;
-  }
+    if (i2c_write(fd, msg, len + 1) != (len + 1)) {
+        return false;
+    }
+    return true;
 }
 
 int i2c_read(int fd, void* buf, uint8_t len) {
